@@ -1,8 +1,8 @@
 name: linkedin_login
-description: A new Flutter plugin.
+description: Flutter plugin for login with linkedIn.
 version: 0.0.1
-author:
-homepage:
+homepage: http://io8.xyz
+repository: https://github.com/ashish01s/linkedin_login_flutter.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

@@ -4,12 +4,47 @@ A new Flutter plugin.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Just create object and call method
+```dart
+LinkedInLogin user = new LinkedInLogin();
+           var token = await user.getToken(context: context,
+                clientId: "ClientId",
+                clientSecret: "ClientSecret",
+                callbackUrl:"https://example.com");            
+```
+## Example
 
+```dart
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: ElevatedButton(
+                           child: Text('LinkedIn Login'),
+                           style: ElevatedButton.styleFrom(
+                             primary: Colors.blue,
+                             elevation: 5,
+                           ),
+                           onPressed: () async {
+                             LinkedInLogin user = new LinkedInLogin();
+                            var token = await user.getToken(context: context,
+                                 clientId: "ClientId",
+                                 clientSecret: "ClientSecret",
+                                 callbackUrl:"https://example.com");
+                            print(token);
+                           },
+                         ),
+        ),
+      ),
+    );
+  }
+}
+```
